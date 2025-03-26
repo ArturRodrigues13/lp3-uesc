@@ -57,7 +57,7 @@ public class Main {
 }
 
 
-// 1. Imprima todos	os números de 150 a	300;
+// 1. Imprima todos os números de 150 a 300;
 class questao1 {
 	public static void main(String[] args) {
 		for(int i = 150; i <= 300; i++) {
@@ -67,7 +67,7 @@ class questao1 {
 }
 
 
-// 2. Imprima a	soma de	1 até 1000;
+// 2. Imprima a soma de 1 até 1000;
 class questao2 {
 	public static void main(String[] args) {
 	int soma = 0;
@@ -79,7 +79,7 @@ class questao2 {
 }
 
 
-// 3. Imprima todos	os múltiplos de	3, entre 1 e 100;
+// 3. Imprima todos os múltiplos de 3, entre 1 e 100;
 class questao3 {
 	public static void main(String[] args) {
 		for(int i = 0; i <= 100; i++) {
@@ -91,7 +91,7 @@ class questao3 {
 }
 
 
-// 4. Imprima os fatoriais de 1	a 10;
+// 4. Imprima os fatoriais de 1 a 10;
 class questao4 {
 	public static void main(String[] args) {
 		for(int i = 1; i <= 10; i++) {
@@ -105,7 +105,7 @@ class questao4 {
 }
 
 
-// 5. Imprima os primeiros números da série	de Fibonacci até passar	de 100.
+// 5. Imprima os primeiros números da série de Fibonacci até passar de 100.
 class questao5 {
 	public static void main(String[] args) {
 		int soma = 0;
@@ -129,12 +129,12 @@ class questao5 {
 }
 
 
-// 6. Escreva um programa que, dada	uma	variável x com algum valor inteiro, temos um novo x de acordo com a seguinte regra:
+// 6. Escreva um programa que, dada uma variável x com algum valor inteiro, temos um novo x de acordo com a seguinte regra:
 
 // @ Se x é par, x = x / 2;
-// @ Se	x é	impar, x = 3 * x + 1;
-// @ O programa	deve parar quando x	tiver o	valor final	de	1. Por exemplo, para x = 13	, a	saída será:
-	   // 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+// @ Se x é impar, x = 3 * x + 1;
+// @ O programa deve parar quando x tiver o valor final de 1. Por exemplo, para x = 13, a saída será:
+	// 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
 class questao6 {
 	public static void main(String[] args) {
 
@@ -157,6 +157,7 @@ class questao6 {
 		scanner.close();
 	}
 }
+
 
 // Imprima a seguinte tabela, usando fors encadeados:
 // 1
@@ -182,7 +183,7 @@ class questao7 {
 }
 
 
-// Faça	o exercício	da série de	Fibonacci usando apenas	duas variáveis.
+// 8. Faça o exercício da série de Fibonacci usando apenas duas variáveis.
 class questao8 {
 	public static void main(String[] args) {
 		int fibatual1 = 1;
