@@ -15,8 +15,11 @@ def main():
 	gastos_marco = 17000
 
 	gastos_total = gastos_janeiro + gastos_fevereiro + gastos_marco
+
 	print(f"O Total de Gastos no Primeiro Trimestre foi de: {gastos_total}")
+
 	media_mensal = gastos_total / 3
+
 	print(f"Valor da média mensal = {media_mensal:.2f}")
 
 main()

@@ -151,7 +151,7 @@ class questao6 {
 				x = 3 * x + 1;
 			}
 
-			System.err.print(x + " ");
+			System.out.print(x + " ");
 		}
 
 		scanner.close();
@@ -176,7 +176,7 @@ class questao7 {
 				int tabela = i * j;
 				System.out.print(tabela + " ");
 			}
-			System.err.println("");
+			System.out.println("");
 		}
 		scanner.close();
 	}

@@ -3,8 +3,8 @@
 
  // 1. Modele uma conta. A ideia aqui é apenas modelar, isto é, só identifique que informações são importantes.
  // Desenhe no papel tudo o que uma Conta tem e tudo o que ela faz. Ela deve ter o nome do titular ( String ), o número ( int ),
- // a agência ( String ), o saldo ( double ) e uma data de abertura ( String ). Além disso, ela deve fazer as seguintes
- // ações:
+ // a agência ( String ), o saldo ( double ) e uma data de abertura ( String ). Além disso, ela deve fazer as seguintes ações:
+
  // @ saca, para retirar um valor do saldo;
  // @ deposita, para adicionar um valor ao saldo;
  // @ calculaRendimento, para devolver o rendimento mensal dessa conta.
