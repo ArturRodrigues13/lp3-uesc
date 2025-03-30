@@ -32,7 +32,8 @@ def main():
 			questao7.tabela()
 		case 8:
 			questao8.fibonacci_2variavel()
-
+		case _:
+			print("Escolha Inválida, Tente Novamente!")
 
 # 1. Imprima todos os números de 150 a 300;
 class questao1:
