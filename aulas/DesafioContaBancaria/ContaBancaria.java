@@ -1,5 +1,3 @@
-package aulas.DesafioContaBancaria;
-
 public class ContaBancaria {
 
 	private String _titular;
@@ -8,6 +6,7 @@ public class ContaBancaria {
 	public ContaBancaria(String _nome) {
 		_titular = _nome;
 		_saldo = 0;
+		Bancos.adicionarConta();
 	}
 
 	public String get_titular() {
@@ -59,4 +58,5 @@ public class ContaBancaria {
 			this.Sacar(_valor);
 		}
 	}
+
 }

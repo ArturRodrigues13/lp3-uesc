@@ -13,11 +13,9 @@
 
 // Desafio Extra: Fazer uma transferência de valor de uma conta para outra, ainda fazendo as verificações acima.
 
-package aulas.DesafioContaBancaria;
-
 import java.util.Scanner;
 
-public class Banco {
+public class App {
 	public static void main(String[] args) {
 
 		String nome;
@@ -67,6 +65,9 @@ public class Banco {
 					System.out.print("Perfeito, me diga o valor que será retirado de sua Conta: ");
 					valor = entrada.nextDouble();
 					conta1.Sacar(valor);
+					break;
+				case 5:
+					System.out.print(Bancos.quantidadeDeContas());
 					break;
 				default:
 					System.out.println("Escolha Inválida, por favor Tente Novamente");
