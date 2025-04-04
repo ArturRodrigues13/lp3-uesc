@@ -19,6 +19,8 @@ public class App {
 	public static void main(String[] args) {
 
 		String nome;
+		String CPF;
+		String nascimento;
 		int conta_atual = 1;
 		int escolha = 1;
 		double valor;
@@ -28,8 +30,22 @@ public class App {
 		System.out.print("Primeiramente, me diga seu nome: ");
 
 		nome = entrada.nextLine();
-		ContaBancaria conta1 = new ContaBancaria(nome);
-		ContaBancaria conta2 = new ContaBancaria("joão");
+
+		System.out.print("Agora o seu CPF: ");
+
+		CPF = entrada.nextLine();
+
+		System.out.println("Agora sua data de nascimento, em formato DD/MM/AAAA");
+
+		nascimento = entrada.nextLine();
+
+		Data cliente_nascimento = new Data(nascimento);
+
+		Cliente cliente1 = new Cliente(nome, CPF, cliente_nascimento);
+		Cliente cliente2 = new Cliente("Artur", "22123121", new Data());
+
+		ContaBancaria conta1 = new ContaBancaria(cliente1);
+		ContaBancaria conta2 = new ContaBancaria(cliente2);
 		System.out.println("Okay, é um prazer ter você conosco " + nome);
 
 		while (escolha != 0) {
