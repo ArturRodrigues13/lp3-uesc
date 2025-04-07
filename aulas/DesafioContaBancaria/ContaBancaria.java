@@ -13,11 +13,11 @@ public class ContaBancaria {
 	}
 
 	public String get_titular() {
-		return _titular.nome;
+		return _titular.getNome();
 	}
 
 	public void set_titular(String _titular) {
-		this._titular.nome = _titular;
+		this._titular.setNome(_titular);
 	}
 
 	public double get_saldo() {
@@ -35,10 +35,10 @@ public class ContaBancaria {
 
 
 	public void ExibirInformacoes() {
-		System.out.println("\nO Titular dessa Conta é: " + _titular.nome);
-		System.out.println("\nSeu CPF é: " + _titular.CPF);
-		System.out.println("\nSua data de nascimento é: " + _titular.data_nascimento.toString());
-		System.out.println("Sua idade é: " + _titular.getIdade(_titular.data_nascimento));
+		System.out.println("\nO Titular dessa Conta é: " + _titular.getNome());
+		System.out.println("\nSeu CPF é: " + _titular.getCPF());
+		System.out.println("\nSua data de nascimento é: " + _titular.getDataNascimento().toString());
+		System.out.println("Sua idade é: " + _titular.getIdade(_titular.getDataNascimento()));
 		System.out.println("Seu saldo é de: " + _saldo);
 		System.out.println("Sua conta foi aberta em: " + data_abertura);
 	}

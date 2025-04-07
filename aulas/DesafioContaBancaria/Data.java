@@ -54,17 +54,27 @@ public class Data {
 
 		int[] dias_no_mes = {31, ehBissexto(ano) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-		if ( dia < 1 )
+		if ( dia < 1 ) {
+			setData(1, 1, 2000);
 			return false;
-		else if ( mes < 1 || mes > 12 )
+		}
+		else if ( mes < 1 || mes > 12 ) {
+			System.out.println("Data inválida, mudando para padrão");
+			setData(1, 1, 2000);
 			return false;
-		else if ( dia > dias_no_mes[mes - 1] )
+		}
+		else if ( dia > dias_no_mes[mes - 1] ) {
+			System.out.println("Data inválida, mudando para padrão");
+			setData(1, 1, 2000);
 			return false;
-		else if ( ano < 0 )
+		}
+		else if ( ano < 0 ) {
+			System.out.println("Data inválida, mudando para padrão");
+			setData(1, 1, 2000);
 			return false;
+		}
 		else
 			return true;
-
 	}
 
 	public static Boolean isEqual(Data data1, Data data2) {
