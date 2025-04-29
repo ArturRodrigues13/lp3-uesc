@@ -1,4 +1,4 @@
-package aulas.DesafioData;
+package DesafioData;
 
 public class Data {
 

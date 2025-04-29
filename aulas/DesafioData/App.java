@@ -1,4 +1,4 @@
-package aulas.DesafioData;
+package DesafioData;
 
 import java.util.Scanner;
 
