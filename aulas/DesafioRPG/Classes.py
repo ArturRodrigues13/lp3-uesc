@@ -40,17 +40,21 @@ class Guerreiro(Personagem, IHabilidadeEspecial):
 
 	def defender(self):
 		if(self.usouHabilidade == False):
-			print(f"{self.nome} usou seu escudo para bloquear o ataque!")
+			print(f"{self.nome} usou seu escudo para bloquear o ataque, reduziu muito o dano!")
 		else:
 			print(f"{self.nome} está sem seu escudo, conseguiu bloquear apenas metade do dano!")
 
 	def habilidadeEspecial(self):
-		self.escudo = 0
-		self.forca *= 2
-		print(f"{self.nome} usou INVESTIDA!!! Seu ataque dobrou, porém ele perdeu seu escudo!")
+		if(self.usouHabilidade == False):
+			self.escudo = 0
+			self.forca *= 2
+			print(f"{self.nome} usou INVESTIDA!!! Seu ataque dobrou, porém ele perdeu seu escudo!")
+			self.usouHabilidade = True
+		else:
+			print("Você já usou sua habilidade")
 
 	def mostrarStatus(self):
-		print(super().mostrarStatus())
+		super().mostrarStatus()
 		print(f"Escudo do personagem: {self.escudo}")
 
 
@@ -69,14 +73,14 @@ class Mago(Personagem, IHabilidadeEspecial):
 			print("Mana Insuficiente")
 
 	def defender(self):
-		print(f"{self.nome} defendeu o ataque, sofreu metade do dano!")
+		print(f"{self.nome} está em posição de defesa, reduziu um pouco o dano")
 
 	def habilidadeEspecial(self):
 		self.mana += 20
 		print(f"{self.nome} usou TELEPORTE!!! Conseguiu se esconder para recuperar mana!")
 
 	def mostrarStatus(self):
-		print(super().mostrarStatus())
+		super().mostrarStatus()
 		print(f"Mana do personagem: {self.mana}")
 
 class Arqueiro(Personagem, IHabilidadeEspecial):
@@ -92,7 +96,7 @@ class Arqueiro(Personagem, IHabilidadeEspecial):
 			alvo.vida -= self.forca + 3
 
 	def defender(self):
-		print(f"{self.nome} defendeu o ataque, sofreu metade do dano!")
+		print(f"{self.nome} defendeu o ataque, reduziu moderadamente o dano!")
 
 	def habilidadeEspecial(self):
 		if(self.flechas > 2):
@@ -102,5 +106,5 @@ class Arqueiro(Personagem, IHabilidadeEspecial):
 			print("Flechas insuficientes!")
 
 	def mostrarStatus(self):
-		print(super().mostrarStatus())
+		super().mostrarStatus()
 		print(f"Flechas do personagem: {self.flechas}")
