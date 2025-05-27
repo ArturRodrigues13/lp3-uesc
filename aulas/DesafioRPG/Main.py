@@ -1,5 +1,6 @@
-from Classes import Personagem,Guerreiro,Mago,Arqueiro
-from Batalha import batalhar
+from Personagens import Personagem,Guerreiro,Mago,Arqueiro
+from Inimigos import InimigoBase,Goblin
+from Aventura import RodadaAtual
 
 def main():
 	print("Bem vindo ao melhor jogo da história!\n")
@@ -7,6 +8,8 @@ def main():
 	print("1: Guerreiro")
 	print("2: Mago")
 	print("3: Arqueiro")
+	print("4: Clerigo")
+	print("5: Ladino")
 	personagem = int(input())
 	while (personagem != 1 and personagem != 2 and personagem != 3):
 		print("escolha inválida, tente novamente por favor!")
@@ -19,13 +22,15 @@ def main():
 	nome = input()
 
 	if(personagem == 1):
-		player = Guerreiro(nome,100,20,20)
+		player = Guerreiro(nome,100,False,20,20)
 	elif(personagem == 2):
-		player = Mago(nome,50,60,80)
+		player = Mago(nome,50,False,60,80)
 	else:
-		player = Arqueiro(nome,75,30,10)
+		player = Arqueiro(nome,75,False,30,10)
 
 	rodada = 1
+
+	aliados = [player]
 
 	print("Perfeito, é aqui que começa sua aventura!!!")
 
@@ -39,21 +44,13 @@ def main():
 
 		escolha = int(input())
 		if(escolha == 1):
-
-			print("Voce encontra um poderoso guerreiro impedindo sua passagem, parece que ele quer brigar")
-			inimigo = Guerreiro("Ronaldo",60,10,10)
-			print("Ronaldo Ronaldo Ronaldo RONALDO!!!")
-
-			print("Parece que você vai ter que lutar com ele!!!")
-
-			batalhar(player,inimigo)
-
+			RodadaAtual(player,aliados,rodada)
 			rodada += 1
 
 		elif(escolha == 2):
 			player.mostrarStatus()
+
 		else:
 			break
-
 
 main()

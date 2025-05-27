@@ -9,6 +9,7 @@ class Personagem(ABC):
 	nome: str
 	vida: int
 	forca: int
+	defender: bool
 
 	@abstractmethod
 	def atacar():
@@ -21,20 +22,21 @@ class Personagem(ABC):
 	def mostrarStatus(self):
 		print(f"Nome do Personagem: {self.nome}\nVida do Personagem: {self.vida}\nForça do Personagem: {self.forca}")
 
-	def __init__(self,nome,vida,forca):
+	def __init__(self,nome,vida,defender,forca):
 		self.nome = nome
 		self.vida = vida
 		self.forca = forca
+		self.defender = defender
 
 class Guerreiro(Personagem, IHabilidadeEspecial):
 	escudo: int
 	usouHabilidade: bool
-	def __init__(self, nome, vida, forca, escudo):
-		super().__init__(nome, vida, forca)
+	def __init__(self, nome, vida, defender, forca, escudo):
+		super().__init__(nome, vida, defender, forca)
 		self.escudo = escudo
 		self.usouHabilidade = False
 
-	def atacar(self, alvo):
+	def atacar(self, alvo: Personagem):
 		print(f"{self.nome} causou {self.forca + 5} de dano em {alvo.nome}!")
 		alvo.vida -= self.forca + 5
 
@@ -58,13 +60,54 @@ class Guerreiro(Personagem, IHabilidadeEspecial):
 		print(f"Escudo do personagem: {self.escudo}")
 
 
+class Clerigo(Personagem, IHabilidadeEspecial):
+	fe: int
+	def __init__(self, nome, vida, defender, forca, fe):
+		super().__init__(nome, vida, defender, forca)
+		self.fe = fe
+
+	def atacar(self, alvo: Personagem):
+		print(f"{self.nome} causou {self.forca} de dano em {alvo.nome}!")
+		alvo.vida -= self.forca
+
+	def defender(self):
+		print(f"{self.nome} está em posição de defesa, reduziu um pouco o dano!")
+
+	def habilidadeEspecial(self):
+		pass
+
+	def mostrarStatus(self):
+		super().mostrarStatus()
+		print(f"Fé do personagem: {self.fe}")
+
+class Ladino(Personagem, IHabilidadeEspecial):
+	stealh: bool
+	def __init__(self, nome, vida, defender, forca, stealh):
+		super().__init__(nome, vida, defender, forca)
+		self.stealh = stealh
+
+	def atacar(self, alvo: Personagem):
+		print(f"{self.nome} causou {self.forca + 7} de dano em {alvo.nome}!")
+		alvo.vida -= self.forca + 7
+
+	def defender(self):
+		print(f"{self.nome} está em posição de defesa, reduziu um pouco o dano!")
+
+	def habilidadeEspecial(self):
+		pass
+
+	def mostrarStatus(self):
+		super().mostrarStatus()
+		print("Está em stealh: Sim") if self.stealh == True else print("Está em stealh: Não")
+
+
 class Mago(Personagem, IHabilidadeEspecial):
 	mana: int
-	def __init__(self, nome, vida, forca, mana):
-		super().__init__(nome, vida, forca)
+	def __init__(self, nome, vida, defender, forca, mana):
+		super().__init__(nome, vida, defender, forca)
 		self.mana = mana
 
-	def atacar(self, alvo):
+	def atacar(self, alvo: Personagem):
 		if(self.mana > 10):
 			self.mana -= 10
 			print(f"{self.nome} usou sua magia, causou {self.forca * 2} de dano em {alvo.nome} e gastou 10 de mana!")
@@ -85,11 +128,11 @@ class Mago(Personagem, IHabilidadeEspecial):
 
 class Arqueiro(Personagem, IHabilidadeEspecial):
 	flechas: int
-	def __init__(self, nome, vida, forca, flechas):
-		super().__init__(nome, vida, forca)
+	def __init__(self, nome, vida, defender, forca, flechas):
+		super().__init__(nome, vida, defender, forca)
 		self.flechas = flechas
 
-	def atacar(self,alvo):
+	def atacar(self,alvo: Personagem):
 		if(self.flechas > 0):
 			self.flechas -= 1
 			print(f"{self.nome} atirou uma flecha no seu alvo, causou {self.forca + 3} de dano em {alvo.nome} e gastou uma flecha!")
